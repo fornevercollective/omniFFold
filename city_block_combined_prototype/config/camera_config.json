@@ -1,0 +1,7 @@
+{
+  "camera_count": 30,
+  "virtual_spacing_meters": 10,
+  "fov_degrees": 120,
+  "height_meters": 3.0,
+  "types": ["RGB", "Depth", "Infrared"]
+}

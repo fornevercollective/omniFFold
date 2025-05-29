@@ -1,1 +1,0 @@
-# Gaussian splatter generator stub
