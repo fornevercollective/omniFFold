@@ -13,7 +13,7 @@ This prototype includes:
 
 Compatible with MOTChallenge and PETS2009 datasets.
 
-
+>
 city_block_combined_prototype/
 ├── data/                  # MOT/PETS datasets
 ├── pipeline/              # Python tracking + rendering
@@ -23,3 +23,4 @@ city_block_combined_prototype/
 │   └── threejs/           # Web viewer
 ├── output/                # Exports: contrails, splats, PLY
 └── README.md              # Full setup + usage guide
+>
