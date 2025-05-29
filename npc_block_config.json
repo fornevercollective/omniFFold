@@ -1,0 +1,3 @@
+city_block_combined_prototype/
+└── data/
+    └── npc_block_config.json   ← make sure this file exists
