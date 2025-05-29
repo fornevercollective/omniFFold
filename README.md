@@ -16,6 +16,7 @@ Compatible with MOTChallenge and PETS2009 datasets.
 >
 city_block_combined_prototype/
 ├── data/                  # MOT/PETS datasets
+    └── npc_block_config.json   ← make sure this file exists
 ├── pipeline/              # Python tracking + rendering
 ├── viewers/
 │   ├── unity/             # Unity project
@@ -24,3 +25,6 @@ city_block_combined_prototype/
 ├── output/                # Exports: contrails, splats, PLY
 └── README.md              # Full setup + usage guide
 >
+city_block_combined_prototype/
+└── data/
+    └── npc_block_config.json   ← make sure this file exists
