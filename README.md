@@ -15,16 +15,24 @@ Compatible with MOTChallenge and PETS2009 datasets.
 
 >
 city_block_combined_prototype/
-├── data/                  # MOT/PETS datasets
-    └── npc_block_config.json   ← make sure this file exists
-├── pipeline/              # Python tracking + rendering
-├── viewers/
-│   ├── unity/             # Unity project
-│   ├── blender/           # .blend file + assets
-│   └── threejs/           # Web viewer
-├── output/                # Exports: contrails, splats, PLY
-└── README.md              # Full setup + usage guide
->
-city_block_combined_prototype/
 └── data/
     └── npc_block_config.json   ← make sure this file exists
+/omniFFold/
+│
+├── index.html                          ← Main landing page with iframe embed
+│
+├── city_block_combined_prototype/
+│   ├── index.html                      ← Standalone city block viewer
+│   ├── viewer.js                       ← Three.js interactive viewer
+│   ├── style.css                       ← Viewer-specific styles
+│   ├── npc_block_config.json           ← NPC pedestrian layout
+│   ├── gaussian_splats/                ← Splat point cloud data (.ply/.pcd/.bin)
+│   ├── contrails/                      ← JSON or line coordinates of paths
+│   ├── edge_maps/                      ← Optional edge detection overlays
+│   ├── viewers/
+│   │   ├── unity/                      ← Unity export files / WebGL build
+│   │   └── blender/                    ← Blender scenes or preview renders
+│   └── assets/
+│       ├── textures/                   ← Sidewalks, cars, buildings, etc.
+│       └── environment_map.hdr         ← Lighting/IBL for 3D
+>
