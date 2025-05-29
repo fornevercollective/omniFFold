@@ -16,17 +16,13 @@
   allowfullscreen
   loading="lazy">
 </iframe>
-! /// <script>
-  window.location.href = "https://fornevercollective.github.io/omniFFold/city_block_combined_prototype/";
-</script>
 <script>
 fetch('https://fornevercollective.github.io/omniFFold/city_block_combined_prototype/')
   .then(response => response.text())
   .then(html => {
     document.getElementById('container').innerHTML = html;
   });
-</script>
-! ///  
+</script> 
 <div id="container"></div>
   <script src="main.js"></script>
 </body>
