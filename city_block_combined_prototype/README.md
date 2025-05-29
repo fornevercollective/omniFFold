@@ -5,6 +5,7 @@ This package includes all three stages: tracking, Gaussian splatter, and VR view
 >
 city_block_combined_prototype/
 ├── data/                  # MOT/PETS datasets
+    └── npc_block_config.json   ← make sure this file exists
 ├── pipeline/              # Python tracking + rendering
 ├── viewers/
 │   ├── unity/             # Unity project
