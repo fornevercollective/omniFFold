@@ -1,1 +1,51 @@
-// Placeholder content for index.html
+// Placeholder content for index.html<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OmniFFold - City Block Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body { margin: 0; background: #000; overflow: hidden; }
+      canvas { display: block; }
+    </style>
+  </head>
+  <body>
+    <script type="module">
+      import * as THREE from 'https://cdn.skypack.dev/three';
+      import { VRButton } from './city_block_combined_prototype/jsm/webxr/VRButton.js';
+      import { OrbitControls } from './city_block_combined_prototype/jsm/controls/OrbitControls.js';
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 1.6, 3);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.xr.enabled = true;
+      document.body.appendChild(renderer.domElement);
+      document.body.appendChild(VRButton.createButton(renderer));
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.target.set(0, 1.6, 0);
+      controls.update();
+
+      const light = new THREE.HemisphereLight(0xffffff, 0x444444);
+      light.position.set(0, 1, 0);
+      scene.add(light);
+
+      const geometry = new THREE.BoxGeometry(1, 1, 1);
+      const material = new THREE.MeshStandardMaterial({ color: 0xff8800 });
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      function animate() {
+        renderer.setAnimationLoop(() => {
+          cube.rotation.x += 0.01;
+          cube.rotation.y += 0.01;
+          renderer.render(scene, camera);
+        });
+      }
+      animate();
+    </script>
+  </body>
+</html>
