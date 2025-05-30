@@ -36,3 +36,16 @@ city_block_combined_prototype/
 │       ├── textures/                   ← Sidewalks, cars, buildings, etc.
 │       └── environment_map.hdr         ← Lighting/IBL for 3D
 >
+
+/omniFFold/update
+│
+├── index.html
+├── assets/
+│   ├── splats/               # Gaussian splat .ply/.npz files
+│   ├── hdri/                 # HDRI environment file (e.g., from Poly Haven)
+│   └── tracking/             # JSON tracking metadata per camera
+│
+├── viewer/
+│   ├── main.js               # React Three Fiber or Three.js viewer logic
+│   ├── config.js             # Camera & object toggle config
+│   └── styles.css
