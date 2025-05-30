@@ -19,6 +19,38 @@
       border-radius: 6px;
     }
     button:hover { background: #555; }
+    .canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+}
+canvas {
+  background: #222;
+  border-radius: 12px;
+  box-shadow: 0 2px 24px #0008;
+  display: block;
+}
+    .presets {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+.preset-card {
+  background: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #0007;
+}
+.preset-card:hover {
+  background: #444;
+  transform: translateY(-4px) scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -41,6 +73,40 @@
     <button onclick="window.location.href='./city_block_combined_prototype/viewers/blender/'">🧱 Blender Viewer</button>
   </div>
 </section>
+
+  <script>
+function selectPreset(preset) {
+  alert('Preset selected: ' + preset);
+  // You would update the 3D scene here!
+}
+
+// Example: Draw a simple "ground plane"
+const canvas = document.getElementById('main-canvas');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = '#333';
+ctx.fillRect(0, 400, 800, 200); // "Ground" rectangle
+ctx.fillStyle = '#666';
+ctx.fillRect(340, 500, 120, 20); // "Preset object" placeholder
+</script>
+
+  <div class="canvas-container">
+  <canvas id="main-canvas" width="800" height="600"></canvas>
+</div>
+  
+  <div class="presets">
+  <div class="preset-card" onclick="selectPreset('city')">🌆 City Ground</div>
+  <div class="preset-card" onclick="selectPreset('park')">🌳 Park Ground</div>
+  <div class="preset-card" onclick="selectPreset('custom')">✨ Custom Ground</div>
+</div>
+  
+<div class="canvas-container">
+  <canvas id="main-canvas" width="800" height="600"></canvas>
+</div>
+<div class="presets">
+  <div class="preset-card" onclick="selectPreset('city')">🌆 City Ground</div>
+  <div class="preset-card" onclick="selectPreset('park')">🌳 Park Ground</div>
+  <div class="preset-card" onclick="selectPreset('custom')">✨ Custom Ground</div>
+</div>  
 
 </body>
 </html>
